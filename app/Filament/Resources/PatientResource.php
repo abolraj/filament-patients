@@ -72,7 +72,12 @@ class PatientResource extends Resource
                     ->searchable(),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('type')
+                    ->options([
+                        'cat' => 'Cat',
+                        'dog' => 'Dog',
+                        'rabbit' => 'Rabbit',
+                    ]),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
