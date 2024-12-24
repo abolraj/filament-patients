@@ -38,6 +38,11 @@ class TreatmentsRelationManager extends RelationManager
             ->recordTitleAttribute('description')
             ->columns([
                 Tables\Columns\TextColumn::make('description'),
+                Tables\Columns\TextColumn::make('price')
+                    ->money('USD')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime(),
             ])
             ->filters([
                 //
